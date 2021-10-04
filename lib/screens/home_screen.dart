@@ -51,6 +51,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
 
+                      //TOP BUTTON LOCK
+                      Positioned(
+                        top: constrains.maxWidth * 0.30,
+                        child: DoorLock(
+                          isLock: _homeController.isTopDoorLock,
+                          press: () => _homeController.updateTopDoorLock(),
+                        ),
+                      ),
+
                       //BOTTOM BUTTON LOCK
                       Positioned(
                         bottom: constrains.maxWidth * 0.40,
