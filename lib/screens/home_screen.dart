@@ -50,6 +50,15 @@ class _MyHomePageState extends State<MyHomePage> {
                           press: () => _homeController.updateLeftDoorLock(),
                         ),
                       ),
+
+                      //BOTTOM BUTTON LOCK
+                      Positioned(
+                        bottom: constrains.maxWidth * 0.40,
+                        child: DoorLock(
+                          isLock: _homeController.isBottomDoorLock,
+                          press: () => _homeController.updateBottomDoorLock(),
+                        ),
+                      ),
                     ],
                   );
                 },
