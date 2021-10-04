@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tesla_animation_flutter/components.dart/DoorLock.dart';
 
-import 'package:tesla_animation_flutter/constrant.dart';
 import 'package:tesla_animation_flutter/screens/home_controller.dart';
 
 class MyHomePage extends StatefulWidget {
