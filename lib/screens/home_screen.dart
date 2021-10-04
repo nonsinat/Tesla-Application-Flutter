@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:tesla_animation_flutter/components.dart/DoorLock.dart';
+import 'package:tesla_animation_flutter/components.dart/TeslaBottomNavigationBar.dart';
 
 import 'package:tesla_animation_flutter/screens/home_controller.dart';
 
@@ -13,12 +15,22 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final HomeController _homeController = HomeController();
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
         animation: _homeController,
         builder: (context, snapshot) {
           return Scaffold(
+            bottomNavigationBar: TeslaBottomNavigationBar(
+              onTap: (int value) {
+                setState(() {
+                  currentIndex = value;
+                  print(currentIndex);
+                });
+              },
+              selectedTab: currentIndex,
+            ),
             body: SafeArea(
               child: LayoutBuilder(
                 builder: (context, constrains) {
