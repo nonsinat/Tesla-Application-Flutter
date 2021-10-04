@@ -33,12 +33,21 @@ class _MyHomePageState extends State<MyHomePage> {
                           width: double.infinity,
                         ),
                       ),
-                      //LEFT BUTTON LOCK
+                      //RIGHT BUTTON LOCK
                       Positioned(
                         right: constrains.maxWidth * 0.05,
                         child: DoorLock(
                           isLock: _homeController.isRightDoorLock,
                           press: () => _homeController.updateRightDoorLock(),
+                        ),
+                      ),
+
+                      //LEFT BUTTON LOCK
+                      Positioned(
+                        left: constrains.maxWidth * 0.05,
+                        child: DoorLock(
+                          isLock: _homeController.isLeftDoorLock,
+                          press: () => _homeController.updateLeftDoorLock(),
                         ),
                       ),
                     ],
@@ -50,4 +59,3 @@ class _MyHomePageState extends State<MyHomePage> {
         });
   }
 }
-
