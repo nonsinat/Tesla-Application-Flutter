@@ -15,7 +15,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final HomeController _homeController = HomeController();
-  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -23,13 +23,8 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (context, snapshot) {
           return Scaffold(
             bottomNavigationBar: TeslaBottomNavigationBar(
-              onTap: (int value) {
-                setState(() {
-                  currentIndex = value;
-                  print(currentIndex);
-                });
-              },
-              selectedTab: currentIndex,
+              onTap: (int index) => _homeController.onBottomNavigation(index),
+              selectedTab: _homeController.selectedIndex,
             ),
             body: SafeArea(
               child: LayoutBuilder(

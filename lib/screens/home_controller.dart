@@ -1,10 +1,18 @@
 import 'package:flutter/cupertino.dart';
 
 class HomeController extends ChangeNotifier {
+  int selectedIndex = 0;
+
   bool isRightDoorLock = true;
   bool isLeftDoorLock = true;
   bool isBottomDoorLock = true;
   bool isTopDoorLock = true;
+
+  void onBottomNavigation(int index) {
+    selectedIndex = index;
+    notifyListeners();
+  }
+
   void updateRightDoorLock() {
     isRightDoorLock = !isRightDoorLock;
     print(isRightDoorLock);
@@ -23,7 +31,7 @@ class HomeController extends ChangeNotifier {
     notifyListeners();
   }
 
-   void updateTopDoorLock() {
+  void updateTopDoorLock() {
     isTopDoorLock = !isTopDoorLock;
     print(isTopDoorLock);
     notifyListeners();
